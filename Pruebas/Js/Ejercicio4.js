@@ -15,13 +15,30 @@ document.addEventListener("DOMContentLoaded",function (){
    console.log("Se ha parseado y cargado correctamente el DOM");
 });
 */
+function despuesDeCargar {
 
-let id = document.getElementById("contenedorGeneral");
+    let id = document.getElementById("contenedorGeneral");
 
-id.style.height = "200px";
-id.style.width = "200px";
-id.style.background = "grey";
-id.style.font = "blue";
-id.style.border = "1px";
-id.style.border = "red";
+    id.style.height = "200px";
+    id.style.width = "200px";
+    id.style.backgroundColor = "grey";
+    id.style.color = "blue";
+    id.style.border = "1px solid red";
+
+    window.addEventListener("resize", function () {
+        contenedor.innerText = window.innerWidth + "-" + window.innerHeight;
+    });
+}
+
+document.addEventListener("DOMContentLoaded",despuesDeCargar);
+
+window.onbeforeunload = function (){
+    return "Se cierra con un mensaje";
+}
+
+
+
+
+
+
 
