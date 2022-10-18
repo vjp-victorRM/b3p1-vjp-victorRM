@@ -6,26 +6,29 @@ function asignaColores(){
     let indice = colores.indexOf(color);
     switch (event.button){
         case 1:
-            if(color = colores[indice]){
-                indice++;
-                this.style.backgroundColor[indice];
+            if(indice == colores.length-1){
+                indice=0;
             }
+            else{
+                indice++;
+            }
+            this.style.backgroundColor=colores[indice];
             break;
         case 2:
-            if(color = "blue"){
+            if(color == "blue"){
                 indice++;
                 this.style.backgroundColor[indice];
             }
             break;
         case 3:
-            if(color = "green"){
+            if(color == "green"){
                 indice++;
                 this.style.backgroundColor[indice];
             }
             break;
 
         case 4:
-            if(color = "yellow"){
+            if(color == "yellow"){
                 indice++;
                 this.style.backgroundColor[indice];
             }
@@ -45,13 +48,10 @@ function creaMatriz(){
             filas.style.height = "25px";
             filas.style.margin = "10px";
 
-        }
+            filas.addEventListener("mouseup",asignaColores);
 
+        }
     }
-    contenedor.addEventListener("click",asignaColores());
-    let colores = ["red","blue","green","yellow"];
-    let color = this.style.backgroundColor;
-    let indice = colores.indexOf(color);
 
 }
 creaMatriz();
