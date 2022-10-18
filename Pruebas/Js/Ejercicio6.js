@@ -1,3 +1,38 @@
+
+function asignaColores(){
+
+    let colores = ["red","blue","green","yellow"];
+    let color = this.style.backgroundColor;
+    let indice = colores.indexOf(color);
+    switch (colores){
+        case 1:
+            if(color = colores[indice]){
+                indice++;
+                this.style.backgroundColor[indice];
+            }
+            break;
+        case 2:
+            if(color = "blue"){
+                indice++;
+                this.style.backgroundColor[indice];
+            }
+            break;
+        case 3:
+            if(color = "green"){
+                indice++;
+                this.style.backgroundColor[indice];
+            }
+            break;
+
+        case 4:
+            if(color = "yellow"){
+                indice++;
+                this.style.backgroundColor[indice];
+            }
+            break;
+    }
+}
+
 function creaMatriz(){
     let contenedor = document.querySelector("#contenedorGeneral");
     for (var i = 0; i < 10; i++){
@@ -9,29 +44,14 @@ function creaMatriz(){
             filas.style.width = "25px";
             filas.style.height = "25px";
             filas.style.margin = "10px";
+
         }
 
     }
+    contenedor.addEventListener("click",asignaColores());
+    let colores = ["red","blue","green","yellow"];
+    let color = this.style.backgroundColor;
+    let indice = colores.indexOf(color);
 
 }
 creaMatriz();
-
-function asignaColores(){
-
-    let colores = ["red","blue","green","yellow"];
-    let color = this.style.backgroundColor;
-    switch (colores){
-        case 1:
-            if(color = ""){
-                button.addEventListener("click",button);
-                let indice = colores.indexOf(color);
-                indice++;
-                this.style.backgroundColor[indice];
-            }
-            break;
-        case 2:
-            if ()
-
-    }
-}
-
