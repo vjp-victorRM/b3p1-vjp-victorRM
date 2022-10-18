@@ -4,7 +4,7 @@ function asignaColores(){
     let colores = ["red","blue","green","yellow"];
     let color = this.style.backgroundColor;
     let indice = colores.indexOf(color);
-    switch (colores){
+    switch (event.button){
         case 1:
             if(color = colores[indice]){
                 indice++;
