@@ -26,4 +26,9 @@ function asignaColores(){
     }
 }
 
-
+let color = this.style.backgroundColor;
+if(color = ""){
+    let indice = colores.indexOf(color);
+    indice++;
+    this.style.backgroundColor[indice];
+}
