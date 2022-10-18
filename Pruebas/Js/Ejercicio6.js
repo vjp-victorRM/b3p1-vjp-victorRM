@@ -17,18 +17,20 @@ function creaMatriz(){
 creaMatriz();
 
 function asignaColores(){
+
     let colores = ["red","blue","green","yellow"];
+    let color = this.style.backgroundColor;
     switch (colores){
         case 1:
-            if(button.event = 0) (
+            if(color = ""){
+                button.addEventListener("click",button);
+                let indice = colores.indexOf(color);
+                indice++;
+                this.style.backgroundColor[indice];
+            }
+            break;
+        case 2:
 
-            )
     }
 }
 
-let color = this.style.backgroundColor;
-if(color = ""){
-    let indice = colores.indexOf(color);
-    indice++;
-    this.style.backgroundColor[indice];
-}
