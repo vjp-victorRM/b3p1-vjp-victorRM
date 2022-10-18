@@ -30,6 +30,7 @@ function asignaColores(){
             }
             break;
         case 2:
+            if ()
 
     }
 }
