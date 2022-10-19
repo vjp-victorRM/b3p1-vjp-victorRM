@@ -1,38 +1,26 @@
+let colores = ["red","blue","green","yellow"]
 
-function asignaColores(){
+function asignaColores(event){
 
-    let colores = ["red","blue","green","yellow"];
     let color = this.style.backgroundColor;
-    let indice = colores.indexOf(color);
+    let posicion = colores.indexOf(color);
     switch (event.button){
+        case 0:
+            posicion = (posicion + 1) % colores.length ;
+            this.style.backgroundColor = colores[posicion];
+            break;
         case 1:
-            if(indice == colores.length-1){
-                indice=0;
-            }
-            else{
-                indice++;
-            }
-            this.style.backgroundColor=colores[indice];
+            this.style.backgroundColor = "";
             break;
         case 2:
-            if(color == "blue"){
-                indice++;
-                this.style.backgroundColor[indice];
+            if (posicion == -1 || posicion == 0){
+                this.style.backgroundColor = colores[colores.length-1];
             }
-            break;
-        case 3:
-            if(color == "green"){
-                indice++;
-                this.style.backgroundColor[indice];
+            else{
+                this.style.backgroundColor = colores[posicion-1];
             }
             break;
 
-        case 4:
-            if(color == "yellow"){
-                indice++;
-                this.style.backgroundColor[indice];
-            }
-            break;
     }
 }
 
