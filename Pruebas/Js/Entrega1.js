@@ -34,3 +34,16 @@ function Fecha(){
     }
 }
 
+function validarId() {
+    var id = document.getElementById("id").value;
+
+    var reg =new RegExp(/^[A-Z][a-z]+[.]$/);
+
+    if (id.match(reg)){
+        alert ("El formato es el correcto");
+    } else {
+        alert ("El formato es incorrecto");
+    }
+
+}
+
