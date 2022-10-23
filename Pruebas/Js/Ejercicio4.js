@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded",function (){
    console.log("Se ha parseado y cargado correctamente el DOM");
 });
 */
-function despuesDeCargar{
+function despuesDeCargar(){
 
     let id = document.getElementById("contenedorGeneral");
 
