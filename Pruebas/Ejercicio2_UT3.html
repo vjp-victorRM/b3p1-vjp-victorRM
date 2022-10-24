@@ -6,10 +6,14 @@
 </head>
 <body>
 <h1>Editor de notas</h1>
+
 <form>
-  <label>Introduce la nota:</label>
-  <input type="text" name="entrada" class="entrada">
-  <button type="submit" id="nota" >GuardarNota</button>
+  <label>Introduce la nota: </label>
+  <input type="text" name="entrada" placeholder="Introduce aqui tu nota" id="nota" required>
+  <button type="submit" onclick="recibir()" value="Enviar" >GuardarNota</button>
 </form>
+<br/>
+<div id="escribir"></div>
+<script src="Js/Entrega2.js"></script>
 </body>
 </html>
