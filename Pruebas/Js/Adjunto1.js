@@ -1,4 +1,4 @@
-/*
+
 function contarNumero(){
     const dni = [7,6,1,3,1,4,0,0,"A"].sort();
 
@@ -26,8 +26,6 @@ function contarNumero(){
 
 contarNumero();
 
- */
-/*
 function dniResumen(){
     let arr = [7,6,1,3,1,4,0,0,"A"];
 
@@ -46,7 +44,7 @@ function dniResumen(){
 
  dniResumen();
 
- */
+
 
 function sumaNumeros(){
     let arr = [7,6,1,3,1,4,0,0,"A"];
