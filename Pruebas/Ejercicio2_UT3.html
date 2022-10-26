@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio2</title>
+    <script src="Js/Entrega2.js"></script>
 </head>
 <body>
-<h1>Editor de notas</h1>
 
-<form>
-  <label>Introduce la nota: </label>
-  <input type="text" name="entrada" placeholder="Introduce aqui tu nota" id="nota" required>
-  <button type="submit" onclick="recibir()" value="Enviar" >GuardarNota</button>
-</form>
-<br/>
-<div id="escribir"></div>
-<script src="Js/Entrega2.js"></script>
+
+<label>Introduce la nota: </label>
+<input id="ingreso" type="text">
+<button onclick="verificarClave()">GuardarNota</button>
+<p id="mensaje"></p>
+<div id="caja1"></div>
 </body>
 </html>
