@@ -1,3 +1,4 @@
+/*
 class Ciclomotor {
     constructor(marca, aceleración, desaceleración) {
         this.numRuedas = 2;
@@ -17,9 +18,15 @@ class Ciclomotor {
 
     acelerar() {
 
-        if (this.arrancar()) {
-            this.velocidadActual += this.aceleración;
+        if (this.encendida == true) {
+            this.velocidadActual = this.velocidadActual + this.aceleración;
+            if(this.velocidadActual > this.velocidadMáxima){
+                this.velocidadActual = this.velocidadMáxima;
+            }
 
+        }
+        else{
+            console.log("La moto no está encendida");
         }
 
 
@@ -43,7 +50,7 @@ class Ciclomotor {
     }
 }
 
-/*
+
 let ciclomotor = new Ciclomotor("Kamawaki",70,20);
 console.log("La moto inicialmente");
 ciclomotor.mostrarInfo();
@@ -61,7 +68,6 @@ console.log("Frenamos la moto:");
 ciclomotor.frenar();
 ciclomotor.mostrarInfo();
 
- */
 
 class Motocross extends Ciclomotor {
     constructor(marca, aceleracion, desaceleración) {
@@ -132,6 +138,43 @@ motoMotoCross.mostrarInfo();
 console.log("FRENAMOS LA MOTO:");
 motoMotoCross.frenar();
 motoMotoCross.mostrarInfo();
+*/
+
+let peticionAjax = new XMLHttpRequest();
+peticionAjax.addEventListener("readystatechange",procesarPeticion);
+peticionAjax.open("GET","http://opendata.caceres.es/GetData/GetData?dataset=om:Monumento&format=json");
+peticionAjax.send();
+
+function pintarInfoMonumento(objetoMonumento){
+    let cadenaDevuelta = "";
+    cadenaDevuelta+="Nombre " +objetoMonumento.rdfs_label.value+"\n";
+    cadenaDevuelta+="Tipo monumento" +objetoMonumento.om_tipoMonumento.value+"\n";
+    cadenaDevuelta+="Latitud" +objetoMonumento.geo_lat.value+"\n";
+    cadenaDevuelta+="Longitud" +objetoMonumento.geo_long.value+"\n";
+    cadenaDevuelta+="Uri"+objetoMonumento.uri.value;
+    return cadenaDevuelta;
+}
+
+function procesarPeticion(event){
+    if(this.readyState == 4 && this.status == 200){
+        let objetoResultado = JSON.parse(this.responseText);
+        procesarResultado(objetoResultado);
+    }
+}
+
+function procesarResultado(objetoResultado){
+    for(let monumento of objetoResultado.results.bindings){
+        console.log(pintarInfoMonumento(monumento));
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
