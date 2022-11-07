@@ -148,15 +148,6 @@ peticionAjax.addEventListener("readystatechange",procesarPeticion);
 peticionAjax.open("GET","http://opendata.caceres.es/GetData/GetData?dataset=om:Monumento&format=json");
 peticionAjax.send();
 
-function pintarInfoMonumento(objetoMonumento){
-    let cadenaDevuelta = "";
-    cadenaDevuelta+="Nombre " +objetoMonumento.rdfs_label.value+"\n";
-    cadenaDevuelta+="Tipo monumento" +objetoMonumento.om_tipoMonumento.value+"\n";
-    cadenaDevuelta+="Latitud" +objetoMonumento.geo_lat.value+"\n";
-    cadenaDevuelta+="Longitud" +objetoMonumento.geo_long.value+"\n";
-    cadenaDevuelta+="Uri"+objetoMonumento.uri.value;
-    return cadenaDevuelta;
-}
 
 function procesarPeticion(event){
     if(this.readyState == 4 && this.status == 200){
@@ -164,6 +155,18 @@ function procesarPeticion(event){
         procesarResultado(objetoResultado);
     }
 }
+
+function pintarInfoMonumento(objetoMonumento){
+    let cadenaDevuelta = "";
+    <td>cadenaDevuelta+=+objetoMonumento.rdfs_label.value</td>;
+    <td>cadenaDevuelta+="Tipo monumento" +objetoMonumento.om_tipoMonumento.value</td>;
+    <td>cadenaDevuelta+="Latitud" +objetoMonumento.geo_lat.value</td>;
+    <td>cadenaDevuelta+="Longitud" +objetoMonumento.geo_long.value</td>;
+    <td>cadenaDevuelta+="Uri"+objetoMonumento.uri.value</td>;
+    return cadenaDevuelta;
+}
+
+
 
 function procesarResultado(objetoResultado){
     for(let monumento of objetoResultado.results.bindings){

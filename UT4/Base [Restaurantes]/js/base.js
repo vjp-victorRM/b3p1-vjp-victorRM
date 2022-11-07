@@ -20,7 +20,7 @@ function cargarRestaurantes(event) {
 
 function pintarInfoMonumento(restaurante){
    let tabla = document.getElementById("tabla");
-   tabla.innerHTML
+   tabla.innerHTML+="<td>";
 
    let cadenaDevuelta = "";
    cadenaDevuelta+="Value" +restaurante.value+"\n";
