@@ -22,11 +22,7 @@ let funcionlambda = setTimeout(pintarHola,500) => {
 
 }
 
-let funcion4 =
-
-
-
-    setTimeout(pintarHola,500);
+let funcion4 = setTimeout(pintarHola,500);
 
 
 
