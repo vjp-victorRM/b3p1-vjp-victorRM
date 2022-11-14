@@ -57,3 +57,47 @@ let coche = {
 
 console.log(coche.getInfo());
 
+
+let obra_teatro = {
+    titulo: " La Celestina ",
+    fecha_estreno: " 12 - 12 - 2022 ",
+    director: {
+        nombre: "Francisco",
+        apellidos: "Quevedo",
+        nacimiento: 1968,
+        obra: ["El Burlon de Sevilla","El Estudiante de Salamanca","Platero y yo"]
+    },
+    actores: [
+       {
+            nombre: "Paco",
+            edad: 28,
+            representaciones:15
+        },
+        {
+            nombre: "Laura",
+            edad: 34,
+            representaciones:55
+        },
+        {
+            nombre: "Carla",
+            edad: 45,
+            representaciones:105
+        }
+
+    ],
+
+    getActores(){
+        return " los actores son " + this.actores[this.nombre,this.edad,this.representaciones];
+    },
+
+    getDirector(){
+        return this.director.nombre + "-" + this.director.apellidos + " ,nació en " + this.director.nacimiento + " , sus obras destacadas son: " +this.director.obra;
+    },
+
+    getInfo(){
+        return "El nombre de la obra es " + this.titulo + "se estrena el " + this.fecha_estreno + " ,su director es: " + this.getDirector() + " y los actores son: " + this.getActores();
+    }
+};
+
+console.log(obra_teatro.getInfo());
+
