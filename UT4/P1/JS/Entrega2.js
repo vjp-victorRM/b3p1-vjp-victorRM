@@ -1,3 +1,5 @@
+let cont = -1;
+
 class Trabajador {
     constructor(nombre, numHorasSemanales, salarioPorHora) {
         this.nombre = nombre;
@@ -12,12 +14,15 @@ class Trabajador {
     }
 
     pintarInfo() {
+        cont++;
         console.log(
-            "------ TRABAJADOR ----------" +
+            "Trabajador " + cont + ":" +
             "\n" + "El nombre del trabajador es: " + this.nombre +
             "\n" + "El numero de horas semanales: " + this.numHorasSemanales +
             "\n" + "El precio/hora: " + this.salarioPorHora
         )
+
+
     }
 }
 
@@ -33,22 +38,25 @@ class Restaurante {
     }
 
     pintarInfo() {
-        let cont = 0;
-        let cadena = "INFORMACION DEL RESTAURANTE"
+
+        let cadena = "INFORMACIÓN DEL RESTAURANTE " + this.nombre;
+        console.log(cadena);
         for (let trabajador of this.trabajadores) {
             console.log(
-            cadena += this.nombre + trabajador
-            "\n" + Trabajador.pintarInfo()
+                trabajador.pintarInfo()
             )
-            cont++;
+
         }
-        return cadena;
 
 
     }
 
     getPagosSemanales() {
-        return Trabajador.getSaldoSemanal();
+        let total = 0;
+        for (let trabajador of this.trabajadores) {
+            total = total + trabajador.getSaldoSemanal();
+        }
+        return total;
     }
 }
 
@@ -56,8 +64,8 @@ let restaurante = new Restaurante("La tapería");
 restaurante.pintarInfo();
 
 restaurante.anadirTrabajador(new Trabajador("Pepe", 40, 10));
-restaurante.anadirTrabajador(new Trabajador("Pepe", 35, 15));
-restaurante.anadirTrabajador(new Trabajador("Pepe", 20, 10));
+restaurante.anadirTrabajador(new Trabajador("Laura", 35, 15));
+restaurante.anadirTrabajador(new Trabajador("Marcos", 20, 10));
 restaurante.pintarInfo();
 
 console.log("Mantener a los trabajadores del restaurante cuesta: " + restaurante.getPagosSemanales());
