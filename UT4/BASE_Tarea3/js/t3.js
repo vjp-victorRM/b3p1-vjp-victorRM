@@ -26,9 +26,9 @@ function pintarPost(objetoPost) {
     let contenedor = document.querySelector("#contenedorEntradas");
     caja.innerHTML =
         ` <div class="entrada">
-            <p><strong>TITULO</strong>${objetoPost.title}</p>
+            <p><strong>TITULO</strong>: ${objetoPost.title}</p>
             <div>
-                <p><strong>Contenido</strong>: contenido</p>
+                <p><strong>Contenido</strong>: ${objetoPost.body}</p>
                 <button id="boton1" class="mostrarUsuario" >Usuario del Post</button>
                 <button class="mostrarComentarios">Mostrar comentarios</button>
                 <div class="usuario d-none">
@@ -44,16 +44,13 @@ function pintarPost(objetoPost) {
     contenedor.appendChild(caja);
     caja.querySelector(".mostrarUsuario").addEventListener("click",function (){
         caja.querySelector(".usuario").classList.toggle("d-none");
-        let usuarioCaja = caja.querySelector(".usuario");
-        if(usuarioCaja.className.includes("d-none")){
-            cargarUsuario(post.userId,div);
-        }else{
-            usuarioCaja.classList.toggle("d-none");
-        }
+
     })
     caja.querySelector(".mostrarComentarios").addEventListener("click",function (){
         caja.querySelector(".comentarios").classList.toggle("d-none");
     })
+
+
 
 }
 
